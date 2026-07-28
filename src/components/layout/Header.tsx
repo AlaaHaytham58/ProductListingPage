@@ -1,17 +1,19 @@
-import { Moon, Plus, ShoppingCart, Sun } from 'lucide-react';
+import { Heart, Moon, Plus, ShoppingCart, Sun } from 'lucide-react';
 import { Container } from './Container';
 import { Button } from '../ui/Button';
 import { CartBadge } from '../../features/cart/components/CartBadge';
+import { WishlistBadge } from '../../features/wishlist/components/WishlistBadge';
 import { useI18n } from '../../i18n/i18nContext';
 
 interface HeaderProps {
   isDark: boolean;
   onToggleDark: () => void;
   onOpenCart: () => void;
+  onOpenWishlist: () => void;
   onOpenAddProduct: () => void;
 }
 
-export function Header({ isDark, onToggleDark, onOpenCart, onOpenAddProduct }: HeaderProps) {
+export function Header({ isDark, onToggleDark, onOpenCart, onOpenWishlist, onOpenAddProduct }: HeaderProps) {
   const { t, locale, toggleLocale } = useI18n();
 
   return (
@@ -37,6 +39,15 @@ export function Header({ isDark, onToggleDark, onOpenCart, onOpenAddProduct }: H
           <Button variant="outline" size="sm" onClick={onOpenAddProduct} className="sm:hidden" aria-label={t.header.addProduct}>
             <Plus size={16} />
           </Button>
+
+          <button
+            onClick={onOpenWishlist}
+            aria-label={t.header.wishlist}
+            className="relative rounded-xl p-2 text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800"
+          >
+            <Heart size={20} />
+            <WishlistBadge />
+          </button>
 
           <button
             onClick={onOpenCart}
