@@ -1,7 +1,15 @@
 import type { Translations } from './en';
 
 export const ar: Translations = {
-  header: { title: 'شوب هب', cart: 'السلة', addProduct: 'إضافة منتج' },
+  header: { title: 'شوب هب', cart: 'السلة', wishlist: 'المفضلة', addProduct: 'إضافة منتج' },
+  home: {
+    shopByInterest: 'تسوق حسب الاهتمام',
+    categories: 'الفئات',
+    findSomethingYouLove: 'اعثر على ما يعجبك',
+    bestseller: 'الأكثر مبيعًا',
+    onSale: 'تخفيض',
+    topRated: 'الأعلى تقييمًا',
+  },
   filters: {
     search: 'ابحث عن منتجات...',
     allCategories: 'جميع الفئات',
@@ -16,6 +24,7 @@ export const ar: Translations = {
     sortNameAsc: 'الاسم أ→ي',
     clearAll: 'مسح الفلاتر',
     filters: 'الفلاتر',
+    activeFilters: 'الفلاتر النشطة',
   },
   product: {
     addToCart: 'أضف للسلة',
@@ -27,6 +36,7 @@ export const ar: Translations = {
     brand: 'العلامة التجارية',
     category: 'الفئة',
     discount: 'خصم',
+    soldBy: 'من',
   },
   cart: {
     empty: 'سلتك فارغة',
@@ -34,6 +44,14 @@ export const ar: Translations = {
     clear: 'تفريغ السلة',
     items: 'عناصر',
     title: 'سلتك',
+  },
+  wishlist: {
+    title: 'المفضلة',
+    empty: 'قائمة المفضلة فارغة',
+    addToWishlist: 'أضف إلى المفضلة',
+    removeFromWishlist: 'إزالة من المفضلة',
+    moveToCart: 'أضف للسلة',
+    clear: 'تفريغ المفضلة',
   },
   addForm: {
     title: 'إضافة منتج جديد',
@@ -48,7 +66,19 @@ export const ar: Translations = {
     submitting: 'جاري الإضافة...',
   },
   pagination: { prev: 'السابق', next: 'التالي', showing: 'عرض', of: 'من', products: 'منتجات' },
-  toast: { addedToCart: 'أُضيف إلى السلة', productAdded: 'تمت إضافة المنتج بنجاح!' },
+  toast: {
+    addedToCart: 'أُضيف إلى السلة',
+    productAdded: 'تمت إضافة المنتج بنجاح!',
+    addedToWishlist: 'أُضيف إلى المفضلة',
+    removedFromWishlist: 'أُزيل من المفضلة',
+  },
   empty: { title: 'لا توجد منتجات مطابقة لفلاترك', subtitle: 'حاول تعديل البحث أو الفلاتر.' },
   errorState: { title: 'حدث خطأ ما', retry: 'إعادة المحاولة' },
+  footer: {
+    aboutTitle: 'عن المطوّر',
+    name: 'ألاء هيثم محمود عبدالعزيز',
+    bio: 'طالب هندسة الحاسبات والاتصالات بجامعة القاهرة، ولدي خبرة عملية في بناء تطبيقات ويب متكاملة وأنظمة LLM إنتاجية. شغوف بدمج تطوير الواجهات الأمامية الحديثة مع الذكاء الاصطناعي التطبيقي لإنشاء منتجات ذكية تركز على المستخدم.',
+    location: 'الشيخ زايد، مصر',
+    builtWith: 'تم البناء باستخدام React و TypeScript و Tailwind CSS',
+  },
 };

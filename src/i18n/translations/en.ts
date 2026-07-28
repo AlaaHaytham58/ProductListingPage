@@ -1,5 +1,13 @@
 export const en = {
-  header: { title: 'ShopHub', cart: 'Cart', addProduct: 'Add Product' },
+  header: { title: 'Kamona Lamona Shop', cart: 'Cart', wishlist: 'Wishlist', addProduct: 'Add Product' },
+  home: {
+    shopByInterest: 'Shop by interest',
+    categories: 'Categories',
+    findSomethingYouLove: 'Find something you love',
+    bestseller: 'Bestseller',
+    onSale: 'On Sale',
+    topRated: 'Top Rated',
+  },
   filters: {
     search: 'Search products...',
     allCategories: 'All Categories',
@@ -14,6 +22,7 @@ export const en = {
     sortNameAsc: 'Name A→Z',
     clearAll: 'Clear filters',
     filters: 'Filters',
+    activeFilters: 'Active filters',
   },
   product: {
     addToCart: 'Add to Cart',
@@ -25,6 +34,7 @@ export const en = {
     brand: 'Brand',
     category: 'Category',
     discount: 'off',
+    soldBy: 'by',
   },
   cart: {
     empty: 'Your cart is empty',
@@ -32,6 +42,14 @@ export const en = {
     clear: 'Clear Cart',
     items: 'items',
     title: 'Your Cart',
+  },
+  wishlist: {
+    title: 'Wishlist',
+    empty: 'Your wishlist is empty',
+    addToWishlist: 'Add to Wishlist',
+    removeFromWishlist: 'Remove from Wishlist',
+    moveToCart: 'Add to Cart',
+    clear: 'Clear Wishlist',
   },
   addForm: {
     title: 'Add New Product',
@@ -46,9 +64,21 @@ export const en = {
     submitting: 'Adding...',
   },
   pagination: { prev: 'Previous', next: 'Next', showing: 'Showing', of: 'of', products: 'products' },
-  toast: { addedToCart: 'added to cart', productAdded: 'Product added successfully!' },
+  toast: {
+    addedToCart: 'added to cart',
+    productAdded: 'Product added successfully!',
+    addedToWishlist: 'Added to wishlist',
+    removedFromWishlist: 'Removed from wishlist',
+  },
   empty: { title: 'No products match your filters', subtitle: 'Try adjusting your search or filters.' },
   errorState: { title: 'Something went wrong', retry: 'Retry' },
+  footer: {
+    aboutTitle: 'About the Developer',
+    name: 'Alaa Haytham Mahmoud Abdelaziz',
+    bio: "I'm a Computer and Communication Engineering student at Cairo University with hands-on experience building fullstack web applications and production LLM pipelines. Passionate about combining modern front-end development with applied AI to create intelligent, user-facing products.",
+    location: 'El-Sheikh Zayed, Egypt',
+    builtWith: 'Built with React, TypeScript & Tailwind CSS',
+  },
 };
 
 export type Translations = typeof en;
