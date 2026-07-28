@@ -12,9 +12,17 @@ interface ProductGridProps {
   error: string | null;
   onRetry: () => void;
   onViewDetails: (product: Product) => void;
+  selectedProductId?: number;
 }
 
-export function ProductGrid({ products, isLoading, error, onRetry, onViewDetails }: ProductGridProps) {
+export function ProductGrid({
+  products,
+  isLoading,
+  error,
+  onRetry,
+  onViewDetails,
+  selectedProductId,
+}: ProductGridProps) {
   const { t } = useI18n();
 
   if (error) {
@@ -32,7 +40,7 @@ export function ProductGrid({ products, isLoading, error, onRetry, onViewDetails
 
   if (isLoading) {
     return (
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 lg:gap-x-6 xl:grid-cols-5 2xl:grid-cols-6">
         {Array.from({ length: 12 }).map((_, i) => (
           <ProductCardSkeleton key={i} />
         ))}
@@ -53,7 +61,7 @@ export function ProductGrid({ products, isLoading, error, onRetry, onViewDetails
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+    <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 lg:gap-x-6 xl:grid-cols-5 2xl:grid-cols-6">
       <AnimatePresence mode="popLayout">
         {products.map((product) => (
           <motion.div
@@ -64,7 +72,11 @@ export function ProductGrid({ products, isLoading, error, onRetry, onViewDetails
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.2 }}
           >
-            <ProductCard product={product} onViewDetails={onViewDetails} />
+            <ProductCard
+              product={product}
+              onViewDetails={onViewDetails}
+              isSelected={product.id === selectedProductId}
+            />
           </motion.div>
         ))}
       </AnimatePresence>
