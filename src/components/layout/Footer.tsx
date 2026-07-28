@@ -27,25 +27,23 @@ const CONTACT = {
 };
 
 const linkClasses =
-  'flex items-center gap-2 rounded-xl border border-neutral-200 px-3 py-2 text-sm text-neutral-700 transition-colors hover:border-primary-600 hover:text-primary-600 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-primary-100 dark:hover:text-primary-100';
+  'flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm text-neutral-100 transition-colors hover:border-accent-500 hover:bg-white/10 hover:text-accent-500';
 
 export function Footer() {
   const { t } = useI18n();
 
   return (
-    <footer className="mt-16 border-t border-neutral-200 bg-surface dark:border-neutral-700 dark:bg-surface-elevated">
+    <footer className="mt-16 bg-primary-600">
       <Container className="flex flex-col gap-4 py-10">
-        <h2 className="font-heading text-lg font-bold text-neutral-900 dark:text-neutral-50">
-          {t.footer.aboutTitle}
-        </h2>
+        <h2 className="font-heading text-lg font-bold text-neutral-50">{t.footer.aboutTitle}</h2>
 
         <div className="max-w-2xl">
-          <p className="font-medium text-neutral-900 dark:text-neutral-50">{t.footer.name}</p>
-          <p className="mt-1 flex items-center gap-1 text-sm text-neutral-500">
+          <p className="font-medium text-neutral-50">{t.footer.name}</p>
+          <p className="mt-1 flex items-center gap-1 text-sm text-neutral-300">
             <MapPin size={14} />
             {t.footer.location}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">{t.footer.bio}</p>
+          <p className="mt-3 text-sm leading-relaxed text-neutral-300">{t.footer.bio}</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">

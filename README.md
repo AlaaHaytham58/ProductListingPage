@@ -6,9 +6,10 @@ A responsive e-commerce product listing page built with React, TypeScript, Vite,
 
 ### Core
 - Product grid with responsive layout (1 → 2 → 3 → 4 columns across phone/tablet/desktop)
-- Product name, price, description, category, and image on every card
+- Product name, price, description, category, rating, and image on every card
 - Add-to-cart and view-details actions on every card
 - Cart item count shown live in the header (with a bounce animation on change)
+- Wishlist / favorites — toggle from the card or details modal, persisted to `localStorage`, with its own drawer and header badge
 - Search by name (debounced), category filter, price range filter, and sort, all combinable
 - Pagination that resets to page 1 whenever a filter changes
 - Add-new-product form with validation (react-hook-form + zod), inline error messages
@@ -20,6 +21,7 @@ A responsive e-commerce product listing page built with React, TypeScript, Vite,
 - ✨ View Transitions API morph from card image to modal image
 - 💫 Micro-interactions: add-to-cart button morph, cart badge bounce, card hover lift, skeleton shimmer
 - 📱 Verified responsive at 375px, 768px, 1024px, and 1440px
+- 👤 About-the-developer section in the footer
 
 ## 🛠 Tech Stack
 
@@ -45,7 +47,7 @@ npm run preview # preview the production build
 src/
 ├── components/
 │   ├── ui/          # Button, Input, Select, Modal, Badge, Skeleton
-│   └── layout/       # Header, Container
+│   └── layout/       # Header, Footer, Container
 ├── features/
 │   ├── products/
 │   │   ├── components/       # ProductCard, ProductGrid, Pagination, ProductCardSkeleton
@@ -55,6 +57,9 @@ src/
 │   ├── cart/
 │   │   ├── components/       # CartBadge, CartDrawer, CartItem
 │   │   └── context/          # CartContext + CartProvider (useReducer)
+│   ├── wishlist/
+│   │   ├── components/       # WishlistBadge, WishlistDrawer, WishlistItem
+│   │   └── context/          # WishlistContext + WishlistProvider (localStorage-persisted)
 │   └── filters/
 │       └── components/       # SearchBar, CategoryFilter, PriceRangeFilter, SortSelect, FilterSidebar, FilterDrawer
 ├── i18n/             # translations/en.ts, translations/ar.ts, i18nContext.tsx
