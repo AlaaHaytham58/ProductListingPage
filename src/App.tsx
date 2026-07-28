@@ -11,6 +11,8 @@ import { Pagination } from './features/products/components/Pagination';
 import { ProductDetailsModal } from './features/products/components/modals/ProductDetailsModal';
 import { AddProductModal } from './features/products/components/modals/AddProductModal';
 import { CartDrawer } from './features/cart/components/CartDrawer';
+import { WishlistDrawer } from './features/wishlist/components/WishlistDrawer';
+import { Footer } from './components/layout/Footer';
 import { ScrollToTopButton } from './components/ui/ScrollToTopButton';
 import { useProducts, PAGE_SIZE } from './features/products/hooks/useProducts';
 import { useCategories } from './features/products/hooks/useCategories';
@@ -36,6 +38,7 @@ function App() {
   const [filters, setFilters] = useState<ProductFilters>(initialFilters);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isAddProductOpen, setIsAddProductOpen] = useState(false);
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
@@ -81,6 +84,7 @@ function App() {
         isDark={isDark}
         onToggleDark={toggleDark}
         onOpenCart={() => setIsCartOpen(true)}
+        onOpenWishlist={() => setIsWishlistOpen(true)}
         onOpenAddProduct={() => setIsAddProductOpen(true)}
       />
 
@@ -134,6 +138,8 @@ function App() {
 
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
+      <WishlistDrawer isOpen={isWishlistOpen} onClose={() => setIsWishlistOpen(false)} />
+
       <ProductDetailsModal product={selectedProduct} onClose={handleCloseDetails} />
 
       <AddProductModal
@@ -141,6 +147,8 @@ function App() {
         onClose={() => setIsAddProductOpen(false)}
         onProductAdded={prependProduct}
       />
+
+      <Footer />
 
       <ScrollToTopButton />
     </div>
